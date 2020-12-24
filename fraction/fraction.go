@@ -47,37 +47,37 @@ func (f Fraction) normalize() (result Fraction) {
 }
 
 //Plus Add two fractions.
-func (f Fraction) Plus(summand Fraction) (result Fraction) {
+func (f Fraction) Plus(summand Fraction) (sum Fraction) {
 	tmp := f.normalize()
 	if tmp.denominator == summand.denominator {
-		result = Fraction{
+		sum = Fraction{
 			tmp.numerator + summand.numerator,
 			tmp.denominator,
 		}
 	} else {
 		denominator := tmp.denominator * summand.denominator
-		result = Fraction{
+		sum = Fraction{
 			tmp.numerator*summand.denominator + summand.numerator*tmp.denominator,
 			denominator,
 		}
 	}
-	return result.normalize()
+	return sum.normalize()
 }
 
 //Minus Subtract a Fraction from another Fraction.
-func (f Fraction) Minus(subtrahend Fraction) (result Fraction) {
+func (f Fraction) Minus(subtrahend Fraction) (difference Fraction) {
 	tmp := f.normalize()
 	if tmp.denominator == subtrahend.denominator {
-		result = Fraction{
+		difference = Fraction{
 			tmp.numerator - subtrahend.numerator,
 			tmp.denominator,
 		}
 	} else {
 		denominator := tmp.denominator * subtrahend.denominator
-		result = Fraction{
+		difference = Fraction{
 			tmp.numerator*subtrahend.denominator - subtrahend.numerator*tmp.denominator,
 			denominator,
 		}
 	}
-	return result.normalize()
+	return difference.normalize()
 }
