@@ -81,3 +81,12 @@ func (f Fraction) Minus(subtrahend Fraction) (difference Fraction) {
 	}
 	return difference.normalize()
 }
+
+//Multiply Multiplies two Fractions with product.
+func (f Fraction) Multiply(multiplicand Fraction) (product Fraction) {
+	tmp := f.normalize()
+	product = Fraction{
+		tmp.numerator * multiplicand.numerator, tmp.denominator * multiplicand.denominator,
+	}
+	return product.normalize()
+}

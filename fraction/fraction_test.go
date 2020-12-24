@@ -160,3 +160,34 @@ func Test_Minus(t *testing.T) {
 		})
 	}
 }
+
+func Test_Multiply(t *testing.T) {
+	type arguments struct {
+		minuend    Fraction
+		subtrahend Fraction
+	}
+	type testCase struct {
+		name     string
+		args     arguments
+		expected Fraction
+	}
+
+	tests := []testCase{
+		{
+			name: "Multiply two fraction with reduced result.",
+			args: arguments{
+				minuend:    Fraction{2, 3},
+				subtrahend: Fraction{4, 5},
+			},
+			expected: Fraction{8, 15},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if difference := tt.args.minuend.Multiply(tt.args.subtrahend); !reflect.DeepEqual(difference, tt.expected) {
+				t.Errorf("Minus(%v) %v-%v = %v, expected %v", tt.name, tt.args.minuend, tt.args.subtrahend, difference, tt.expected)
+			}
+		})
+	}
+}
