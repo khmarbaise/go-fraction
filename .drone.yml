@@ -18,7 +18,7 @@ steps:
   - make lint
   - make fmt-check
   - make misspell-check
-  - make test-vendor
+#  - make test-vendor
   - make build
   when:
     event:
