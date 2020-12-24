@@ -5,6 +5,7 @@ import (
 	"math/big"
 )
 
+//Fraction comprises of numerator and denominator
 type Fraction struct {
 	numerator   int
 	denominator int
@@ -45,6 +46,7 @@ func (f Fraction) normalize() (result Fraction) {
 	return
 }
 
+//Plus Add two fractions.
 func (f Fraction) Plus(summand Fraction) (result Fraction) {
 	tmp := f.normalize()
 	if tmp.denominator == summand.denominator {
@@ -62,6 +64,7 @@ func (f Fraction) Plus(summand Fraction) (result Fraction) {
 	return result.normalize()
 }
 
+//Minus Subtract a Fraction from another Fraction.
 func (f Fraction) Minus(subtrahend Fraction) (result Fraction) {
 	tmp := f.normalize()
 	if tmp.denominator == subtrahend.denominator {
