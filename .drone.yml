@@ -11,8 +11,8 @@ steps:
 - name: build
   pull: always
   image: golang:1.15
-  environment:
-      GOPROXY: https://goproxy.cn
+#  environment:
+#      GOPROXY: https://goproxy.cn
   commands:
   - make clean
   - make lint
