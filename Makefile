@@ -107,11 +107,11 @@ fmt-check:
 
 .PHONY: test
 test:
-	$(GO) test -mod=vendor -tags='sqlite sqlite_unlock_notify' $(PACKAGES)
+	$(GO) test -mod=vendor $(PACKAGES)
 
 .PHONY: unit-test-coverage
 unit-test-coverage:
-	$(GO) test -mod=vendor -tags='sqlite sqlite_unlock_notify' -cover -coverprofile coverage.out $(PACKAGES) && echo "\n==>\033[32m Ok\033[m\n" || exit 1
+	$(GO) test -mod=vendor -cover -coverprofile coverage.out $(PACKAGES) && echo "\n==>\033[32m Ok\033[m\n" || exit 1
 
 .PHONY: vendor
 vendor:
