@@ -5,6 +5,15 @@ import (
 	"testing"
 )
 
+func Test_String(t *testing.T) {
+	fraction := Fraction{1, 2}
+	s := fraction.String()
+	expected := "{1/2}"
+	if s != expected {
+		t.Errorf("current: '%v' expected: '%v'", s, expected)
+	}
+}
+
 func Test_signum(t *testing.T) {
 	type testCase struct {
 		name     string

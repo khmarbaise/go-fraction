@@ -1,6 +1,7 @@
 package fraction
 
 import (
+	"fmt"
 	"log"
 	"math/big"
 )
@@ -9,6 +10,10 @@ import (
 type Fraction struct {
 	numerator   int
 	denominator int
+}
+
+func (f Fraction) String() string {
+	return fmt.Sprintf("{%d/%d}", f.numerator, f.denominator)
 }
 
 func calculateGCD(first int, second int) (gcd int) {
