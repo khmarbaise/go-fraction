@@ -2,7 +2,6 @@ package fraction
 
 import (
 	"fmt"
-	"log"
 	"math/big"
 )
 
@@ -40,7 +39,7 @@ func signum(x int) int {
 func (f Fraction) normalize() (result Fraction) {
 	if f.denominator == 0 {
 		//TODO: What is the best way? via Panic or returning an error?
-		log.Panic("denominator is not allowed to be zero.")
+		panic("denominator is not allowed to be zero.")
 	}
 
 	sign := signum(f.denominator) * signum(f.numerator)

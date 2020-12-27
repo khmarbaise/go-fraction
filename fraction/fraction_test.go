@@ -5,6 +5,20 @@ import (
 	"testing"
 )
 
+//func Test_Panic(t *testing.T) {
+//	t.Run("Invalid value for denominator", func(t *testing.T) {
+//		base := Fraction{1, 0}
+//		defer base.normalize()
+//		rec := recover()
+//		fmt.Printf("actual:%v", rec)
+//		expected := "denominator is not allowed to be zero."
+//		if result := recover(); !reflect.DeepEqual(result, expected) {
+//			t.Errorf("normalize() current:'%v' expected: %v", result, expected)
+//		}
+//
+//	})
+//}
+
 func Test_String(t *testing.T) {
 	fraction := Fraction{1, 2}
 	s := fraction.String()
